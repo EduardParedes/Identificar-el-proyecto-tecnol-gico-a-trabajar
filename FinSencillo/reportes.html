@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+    <body>
+
+        <header class="navbar">
+        <h2>Ingreso y Gasto</h2>
+            <nav>
+                <a href="index.html">Ingreso y Gasto</a>
+                <a class="active" class="active">Reportes</a>
+                <a href="categorias.html">Categorías</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h2>Reportes</h2>
+
+            <div class="report-section">
+                <div class="chart-placeholder">
+                    Gráfica de ingresos y gastos
+                </div>
+
+                <div class="filtros">
+                    <button class="btn-filtro">Día</button>
+                    <button class="btn-filtro">Semana</button>
+                    <button class="btn-filtro">Mes</button>
+                    <button class="btn-filtro">Año</button>
+                </div>
+
+            <p class="description">
+                Aquí se visualizan los reportes financieros según el rango de tiempo seleccionado.
+            </p>
+
+            <h3>Generar Reportes</h3>
+            <div class="acciones">
+                <button class="btn-secundario" onclick="abrirModalExcel()">Excel</button>
+                <button class="btn-secundario" onclick="abrirModalPDF()">PDF</button>
+            </div>
+            <div class="modal" id="modalExcel">
+                <div class="modal-contenido">
+                    <p>¿Deseas descargar Excel?</p>
+                    <button class="btn danger" onclick="cerrarModalExcel()">No</button>
+                    <button class="btn success" onclick="cerrarModalExcel()">Sí</button>
+                </div>
+            </div>
+            <div class="modal" id="modalPDF">
+                <div class="modal-contenido">
+                    <p>¿Deseas descargar PDF?</p>
+                    <button class="btn danger" onclick="cerrarModalPDF()">No</button>
+                    <button class="btn success" onclick="cerrarModalPDF()">Sí</button>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            function abrirModalExcel() {
+                document.getElementById("modalExcel").style.display = "flex";
+            }
+            function cerrarModalExcel() {
+                document.getElementById("modalExcel").style.display = "none";
+            }
+
+            function abrirModalPDF() {
+                document.getElementById("modalPDF").style.display = "flex";
+            }
+            function cerrarModalPDF() {
+                document.getElementById("modalPDF").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

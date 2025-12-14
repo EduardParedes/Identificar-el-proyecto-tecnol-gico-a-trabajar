@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Categorías</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+    <body>
+        <header class="navbar">
+            <h2>Categorías</h2>
+            <nav>
+                <a href="index.html">Ingreso y Gasto</a>
+                <a href="reportes.html">Reportes</a>
+                <a class="active">Categorías</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h2>Categorías</h2>
+
+            <button class="btn primary" onclick="abrirModalCrear()">Crear</button>
+
+            <div class="cards">
+                <div class="card category red">
+                    <h4>Gastos ropa</h4>
+                    <button class="btn primary" onclick="abrirModalEditar()">Editar</button>
+                    <button class="btn danger" onclick="abrirModalEliminar()">Eliminar</button>
+                </div>
+
+                <div class="card category green">
+                    <h4>Gastos Personales</h4>
+                    <button class="btn primary" onclick="abrirModalEditar()">Editar</button>
+                    <button class="btn danger" onclick="abrirModalEliminar()">Eliminar</button>
+                </div>
+
+                <div class="card category yellow">
+                    <h4>Gastos Comida</h4>
+                    <button class="btn primary" onclick="abrirModalEditar()">Editar</button>
+                    <button class="btn danger" onclick="abrirModalEliminar()">Eliminar</button>
+                </div>
+
+                <div class="card category purple">
+                    <h4>Gastos Servicios</h4>
+                    <button class="btn primary" onclick="abrirModalEditar()">Editar</button>
+                    <button class="btn danger" onclick="abrirModalEliminar()">Eliminar</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de crear -->
+        <div class="modal" id="modalCrear">
+        <div class="modal-content">
+            <input type="text" placeholder="Nombre de la categoría">
+            <input type="text" placeholder="Ingreso">
+            <input type="text" placeholder="Gasto">
+            <button class="btn danger" style="margin-right: 40%;" onclick="cerrarModalCrear()">Cancelar</button>
+            <button class="btn success" onclick="cerrarModalCrear()">Crear</button>
+        </div>
+        </div>
+
+        <!-- Modal de editar -->
+        <div class="modal" id="modalEditar">
+            <div class="modal-content">
+                <input type="text" placeholder="Editar nombre">
+                <input type="text" placeholder="Editar dato ingreso">
+                <input type="text" placeholder="Editar dato Gasto">
+                <button class="btn danger" style="margin-right: 30%;" onclick="cerrarModalEditar()">Cancelar</button>
+                <button class="btn success" onclick="cerrarModalEditar()">Actualizar</button>
+            </div>
+        </div>
+
+        <!-- Modal de eliminar -->
+        <div class="modal" id="modalEliminar">
+            <div class="modal-content">
+                <p>¿Deseas eliminar esta categoría?</p>
+                <button class="btn danger" style="margin-right: 50%;" onclick="cerrarModalEliminar()">No</button>
+                <button class="btn success" onclick="cerrarModalEliminar()">Sí</button>
+            </div>
+        </div>
+        <script>
+            function abrirModalCrear() {
+                document.getElementById("modalCrear").style.display = "flex";
+            }
+            function cerrarModalCrear() {
+                document.getElementById("modalCrear").style.display = "none";
+            }
+
+            function abrirModalEditar() {
+                document.getElementById("modalEditar").style.display = "flex";
+            }
+            function cerrarModalEditar() {
+                document.getElementById("modalEditar").style.display = "none";
+            }
+
+            function abrirModalEliminar() {
+                document.getElementById("modalEliminar").style.display = "flex";
+            }
+            function cerrarModalEliminar() {
+                document.getElementById("modalEliminar").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

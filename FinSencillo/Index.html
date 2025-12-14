@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreso y Gasto</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+    <body>
+
+        <header class="navbar">
+        <h2>Ingreso y Gasto</h2>
+        <nav>
+                <a class="active">Ingreso y Gasto</a>
+                <a href="reportes.html">Reportes</a>
+                <a href="categorias.html">Categorías</a>
+        </nav>
+        </header>
+
+        <main class="container">
+
+        <div class="actions">
+            <button class="btn primary" onclick="openModal('modalIngreso')">Registrar Ingreso</button>
+            <button class="btn primary" onclick="openModal('modalGasto')">Registrar Gasto</button>
+        </div>
+
+        <h3>Ingresos y gastos del mes</h3>
+
+        <!-- Gráfica de simulacion -->
+        <div class="chart-placeholder">
+            <p>Gráfica de ingresos y gastos</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+            <p>Total gastado esta semana</p>
+            <strong>$450.000</strong>
+            </div>
+
+            <div class="card">
+            <p>Total de ingresos</p>
+            <strong>$1.450.000</strong>
+            </div>
+
+            <div class="card">
+            <p>Balance actual</p>
+            <strong>$750.000</strong>
+            </div>
+        </div>
+
+        </main>
+
+        <!-- Modal de ingreso -->
+        <div class="modal" id="modalIngreso">
+        <div class="modal-content">
+            <h4>Registrar Ingreso</h4>
+            <input type="text" placeholder="Monto">
+            <input type="text" placeholder="Categoría">
+            <input type="date">
+            <div class="modal-actions">
+            <button class="btn danger" onclick="closeModal()">Cancelar</button>
+            <button class="btn success" onclick="closeModal()">Guardar</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal de gasto -->
+        <div class="modal" id="modalGasto">
+        <div class="modal-content">
+            <h4>Registrar Gasto</h4>
+            <input type="text" placeholder="Monto">
+            <input type="text" placeholder="Categoría">
+            <input type="date">
+            <div class="modal-actions">
+            <button class="btn danger" onclick="closeModal()">Cancelar</button>
+            <button class="btn success" onclick="closeModal()">Guardar</button>
+            </div>
+        </div>
+        </div>
+
+        <script>
+            function openModal(id) {
+                document.getElementById(id).style.display = "flex";
+            }
+            function closeModal() {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+        </script>
+    </body>
+</html>
